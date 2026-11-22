@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ld-fit-v2';
+const CACHE_NAME = 'cuchufly-fit-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -7,7 +7,9 @@ const ASSETS = [
   './illustrations.js',
   './rutinas.json',
   './manifest.json',
-  './icon.svg'
+  './icon-192.png',
+  './icon-512.png',
+  './apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
