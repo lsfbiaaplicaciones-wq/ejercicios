@@ -1,0 +1,794 @@
+{
+  "app": {
+    "titulo": "Lili & Daniel Fit",
+    "subtitulo": "Entrenamiento guiado en casa • 4 kg / 6 kg",
+    "perfiles": {
+      "lili": {
+        "nombre": "Lili",
+        "edad": 52,
+        "mancuernas": "2 × 4 kg"
+      },
+      "daniel": {
+        "nombre": "Daniel",
+        "edad": 48,
+        "mancuernas": "2 × 6 kg"
+      }
+    }
+  },
+  "semana": [
+    {
+      "diaId": "lunes",
+      "diaNombre": "Lunes",
+      "diaCorto": "Lun",
+      "tipo": "fuerte",
+      "titulo": "Fuerza Total A + Core",
+      "duracionMin": 35,
+      "enfoque": "Piernas, Hombros, Espalda y Abdomen",
+      "ejercicios": [
+        {
+          "id": "lun-w1",
+          "bloque": "Calentamiento 1/4",
+          "nombre": "Círculos de Cuello y Hombros",
+          "ilustracion": "warmup_shoulders",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 45,
+          "descansoSeg": 5,
+          "lili": "45 seg suaves • Sin forzar el cuello",
+          "daniel": "45 seg suaves • Hombros amplios atrás",
+          "tips": [
+            "Haz círculos amplios con los hombros hacia atrás y luego adelante.",
+            "Mueve el cuello suave de lado a lado."
+          ],
+          "audioKey": "ex_warmup_shoulders_1356"
+        },
+        {
+          "id": "lun-w2",
+          "bloque": "Calentamiento 2/4",
+          "nombre": "Rotación de Cadera y Torso",
+          "ilustracion": "warmup_hips",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 45,
+          "descansoSeg": 5,
+          "lili": "45 seg • Giros suaves de cintura y cadera",
+          "daniel": "45 seg • Giros amplios de cadera",
+          "tips": [
+            "Manos en la cintura, dibuja círculos grandes con la cadera.",
+            "Gira el torso suave a izquierda y derecha."
+          ],
+          "audioKey": "ex_warmup_hips_5763"
+        },
+        {
+          "id": "lun-w3",
+          "bloque": "Calentamiento 3/4",
+          "nombre": "Flexión Suave de Rodillas y Tobillos",
+          "ilustracion": "warmup_knees",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 45,
+          "descansoSeg": 5,
+          "lili": "45 seg • Medias sentadillas sin peso",
+          "daniel": "45 seg • Medias sentadillas sin peso",
+          "tips": [
+            "Baja solo a la mitad para lubricar rodillas y caderas.",
+            "Mantén los talones apoyados."
+          ],
+          "audioKey": "ex_warmup_knees_3507"
+        },
+        {
+          "id": "lun-w4",
+          "bloque": "Calentamiento 4/4",
+          "nombre": "Marcha Activa en el Lugar",
+          "ilustracion": "warmup_march",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 45,
+          "descansoSeg": 15,
+          "lili": "45 seg • Sube rodillas y mueve brazos",
+          "daniel": "45 seg • Sube rodillas con ritmo constante",
+          "tips": [
+            "Acompaña con braceo natural para activar el corazón.",
+            "Prepárate para tomar tus mancuernas."
+          ],
+          "audioKey": "ex_warmup_march_5433"
+        },
+        {
+          "id": "lun-2",
+          "bloque": "Fuerza",
+          "nombre": "Sentadilla con Mancuernas",
+          "ilustracion": "squat",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 45,
+          "lili": "12–15 reps • 4 kg c/u a los lados",
+          "daniel": "12–15 reps • 6 kg c/u a los lados",
+          "tips": [
+            "Pies al ancho de hombros, lleva la cadera atrás como sentándote.",
+            "Mantén el pecho erguido y rodillas alineadas con los pies."
+          ],
+          "audioKey": "ex_squat_5594"
+        },
+        {
+          "id": "lun-3",
+          "bloque": "Fuerza",
+          "nombre": "Press de Hombros de Pie",
+          "ilustracion": "shoulder_press",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 45,
+          "lili": "10–12 reps • 4 kg c/u",
+          "daniel": "10–12 reps • 6 kg c/u",
+          "tips": [
+            "Aprieta abdomen y glúteos para no arquear la espalda baja.",
+            "Empuja arriba sin encoger los hombros hacia las orejas."
+          ],
+          "audioKey": "ex_shoulder_press_2896"
+        },
+        {
+          "id": "lun-4",
+          "bloque": "Fuerza",
+          "nombre": "Remo Inclinado con Mancuernas",
+          "ilustracion": "row",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 45,
+          "lili": "12 reps • 4 kg c/u",
+          "daniel": "12–15 reps • 6 kg c/u",
+          "tips": [
+            "Inclina el torso hacia adelante con la espalda totalmente recta.",
+            "Tira las mancuernas hacia la cadera juntando los omóplatos."
+          ],
+          "audioKey": "ex_row_6645"
+        },
+        {
+          "id": "lun-5",
+          "bloque": "Fuerza",
+          "nombre": "Puente de Glúteos en Mat",
+          "ilustracion": "glute_bridge",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 40,
+          "lili": "15 reps • 1 mancuerna 4 kg en cadera",
+          "daniel": "15 reps • 1 o 2 mancuernas 6 kg",
+          "tips": [
+            "Apoya bien los talones y sube la cadera apretando glúteos 1 seg arriba.",
+            "El empuje nace de la cadera, sin arquear la lumbar."
+          ],
+          "audioKey": "ex_glute_bridge_7701"
+        },
+        {
+          "id": "lun-6",
+          "bloque": "Core & Abdomen",
+          "nombre": "Plancha Frontal en Mat",
+          "ilustracion": "plank",
+          "tipo": "tiempo",
+          "series": 3,
+          "duracionSeg": 35,
+          "descansoSeg": 35,
+          "lili": "30–35 seg • Antebrazos o manos",
+          "daniel": "35 seg • Antebrazos o manos",
+          "tips": [
+            "Cuerpo en línea recta de cabeza a talones, ombligo hacia adentro.",
+            "Si sientes tensión lumbar, apoya rodillas manteniendo abdomen firme."
+          ],
+          "audioKey": "ex_plank_895"
+        },
+        {
+          "id": "lun-7",
+          "bloque": "Core & Abdomen",
+          "nombre": "Dead Bug (Bicho Muerto)",
+          "ilustracion": "dead_bug",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 30,
+          "lili": "10 reps por lado • Lento y controlado",
+          "daniel": "12 reps por lado • Lento y controlado",
+          "tips": [
+            "Mantén la espalda baja pegada al mat durante todo el movimiento.",
+            "Exhala al extender brazo y pierna contraria."
+          ],
+          "audioKey": "ex_dead_bug_5657"
+        },
+        {
+          "id": "lun-8",
+          "bloque": "Cierre",
+          "nombre": "Estiramiento Suave Final",
+          "ilustracion": "stretch",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 90,
+          "descansoSeg": 0,
+          "lili": "90 seg • Pecho, espalda y piernas",
+          "daniel": "90 seg • Pecho, espalda y piernas",
+          "tips": [
+            "Estira sin rebote hasta sentir tensión agradable, nunca dolor.",
+            "Respira lento para bajar pulsaciones."
+          ],
+          "audioKey": "ex_stretch_9768"
+        }
+      ]
+    },
+    {
+      "diaId": "martes",
+      "diaNombre": "Martes",
+      "diaCorto": "Mar",
+      "tipo": "suave",
+      "titulo": "Movilidad, Postura y Abdomen Suave",
+      "duracionMin": 12,
+      "enfoque": "Recuperación activa, columna y faja abdominal",
+      "ejercicios": [
+        {
+          "id": "mar-1",
+          "bloque": "Movilidad",
+          "nombre": "Gato-Camello en Mat",
+          "ilustracion": "cat_camel",
+          "tipo": "tiempo",
+          "series": 2,
+          "duracionSeg": 50,
+          "descansoSeg": 15,
+          "lili": "50 seg fluidos",
+          "daniel": "50 seg fluidos",
+          "tips": [
+            "Inhala abriendo el pecho, exhala redondeando la espalda hacia arriba.",
+            "Ideal para soltar rigidez lumbar y dorsal."
+          ],
+          "audioKey": "ex_cat_camel_812"
+        },
+        {
+          "id": "mar-2",
+          "bloque": "Core Suave",
+          "nombre": "Bird-Dog (Perro de Caza)",
+          "ilustracion": "bird_dog",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 25,
+          "lili": "8 reps por lado",
+          "daniel": "10 reps por lado",
+          "tips": [
+            "Extiende brazo y pierna contraria sin girar la cadera.",
+            "Mantén la mirada en el mat para alinear el cuello."
+          ],
+          "audioKey": "ex_bird_dog_8348"
+        },
+        {
+          "id": "mar-3",
+          "bloque": "Postura",
+          "nombre": "Apertura de Pecho y Hombros",
+          "ilustracion": "warmup_shoulders",
+          "tipo": "tiempo",
+          "series": 2,
+          "duracionSeg": 45,
+          "descansoSeg": 15,
+          "lili": "45 seg suaves",
+          "daniel": "45 seg suaves",
+          "tips": [
+            "Lleva los hombros abajo y atrás abriendo el pecho.",
+            "Respira profundo expandiendo costillas."
+          ],
+          "audioKey": "ex_warmup_shoulders_9280"
+        },
+        {
+          "id": "mar-4",
+          "bloque": "Core Suave",
+          "nombre": "Respiración y Activación Abdominal",
+          "ilustracion": "breathing",
+          "tipo": "tiempo",
+          "series": 2,
+          "duracionSeg": 45,
+          "descansoSeg": 20,
+          "lili": "45 seg • Exhalación larga",
+          "daniel": "45 seg • Exhalación larga",
+          "tips": [
+            "Acostados boca arriba con rodillas dobladas.",
+            "Exhala todo el aire llevando el ombligo suave hacia la columna."
+          ],
+          "audioKey": "ex_breathing_4164"
+        }
+      ]
+    },
+    {
+      "diaId": "miercoles",
+      "diaNombre": "Miércoles",
+      "diaCorto": "Mié",
+      "tipo": "fuerte",
+      "titulo": "Fuerza Total B + Core",
+      "duracionMin": 35,
+      "enfoque": "Cadena posterior, Pecho, Piernas y Cintura",
+      "ejercicios": [
+        {
+          "id": "mie-w1",
+          "bloque": "Calentamiento 1/3",
+          "nombre": "Círculos de Brazos y Hombros",
+          "ilustracion": "warmup_shoulders",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 5,
+          "lili": "60 seg • Movilidad de tren superior",
+          "daniel": "60 seg • Movilidad de tren superior",
+          "tips": [
+            "Círculos grandes de brazos adelante y atrás.",
+            "Prepara hombros y muñecas para el press."
+          ],
+          "audioKey": "ex_warmup_shoulders_1677"
+        },
+        {
+          "id": "mie-w2",
+          "bloque": "Calentamiento 2/3",
+          "nombre": "Movilidad de Cadera y Rodillas",
+          "ilustracion": "warmup_knees",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 5,
+          "lili": "60 seg • Sentadillas suaves sin peso",
+          "daniel": "60 seg • Sentadillas suaves sin peso",
+          "tips": [
+            "Movimientos lentos y controlados.",
+            "Activa glúteos y muslos."
+          ],
+          "audioKey": "ex_warmup_knees_7352"
+        },
+        {
+          "id": "mie-w3",
+          "bloque": "Calentamiento 3/3",
+          "nombre": "Marcha Activa",
+          "ilustracion": "warmup_march",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 15,
+          "lili": "60 seg • Subiendo ritmo",
+          "daniel": "60 seg • Subiendo ritmo",
+          "tips": [
+            "Sube rodillas con buen braceo.",
+            "Listos para tomar las mancuernas."
+          ],
+          "audioKey": "ex_warmup_march_258"
+        },
+        {
+          "id": "mie-2",
+          "bloque": "Fuerza",
+          "nombre": "Peso Muerto Rumano con Mancuernas",
+          "ilustracion": "rdl",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 45,
+          "lili": "12 reps • 4 kg c/u",
+          "daniel": "12–15 reps • 6 kg c/u",
+          "tips": [
+            "Rodillas levemente flexionadas, lleva la cadera hacia atrás.",
+            "Baja mancuernas pegadas a muslos con espalda recta y sube apretando glúteos."
+          ],
+          "audioKey": "ex_rdl_2684"
+        },
+        {
+          "id": "mie-3",
+          "bloque": "Fuerza",
+          "nombre": "Press de Pecho en Mat (Floor Press)",
+          "ilustracion": "floor_press",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 45,
+          "lili": "12 reps • 4 kg c/u",
+          "daniel": "12–15 reps • 6 kg c/u",
+          "tips": [
+            "Codos a 45° respecto al cuerpo (no totalmente abiertos en T).",
+            "Baja hasta tocar suave el suelo con los codos y empuja arriba."
+          ],
+          "audioKey": "ex_floor_press_2850"
+        },
+        {
+          "id": "mie-4",
+          "bloque": "Fuerza",
+          "nombre": "Zancadas Atrás (con o sin silla)",
+          "ilustracion": "lunge",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 45,
+          "descansoSeg": 45,
+          "lili": "10 reps por pierna • 4 kg c/u",
+          "daniel": "10–12 reps por pierna • 6 kg c/u",
+          "tips": [
+            "Paso largo atrás bajando suave la rodilla trasera.",
+            "Pueden apoyar una mano en la silla si buscan más estabilidad."
+          ],
+          "audioKey": "ex_lunge_4246"
+        },
+        {
+          "id": "mie-5",
+          "bloque": "Fuerza",
+          "nombre": "Curl de Bíceps Alternado",
+          "ilustracion": "biceps",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 40,
+          "lili": "12 reps por brazo • 4 kg",
+          "daniel": "12 reps por brazo • 6 kg",
+          "tips": [
+            "Mantén codos pegados a los costados, sin balancear la espalda.",
+            "Baja en 2 segundos controlando el peso."
+          ],
+          "audioKey": "ex_biceps_1508"
+        },
+        {
+          "id": "mie-6",
+          "bloque": "Core & Abdomen",
+          "nombre": "Plancha Lateral en Mat",
+          "ilustracion": "side_plank",
+          "tipo": "tiempo",
+          "series": 2,
+          "duracionSeg": 30,
+          "descansoSeg": 25,
+          "lili": "30 seg por lado (rodilla o completa)",
+          "daniel": "30 seg por lado",
+          "tips": [
+            "Codo justo debajo del hombro, eleva la cadera en línea recta.",
+            "Fortalece cintura y oblicuos sin forzar la columna."
+          ],
+          "audioKey": "ex_side_plank_3921"
+        },
+        {
+          "id": "mie-7",
+          "bloque": "Core & Abdomen",
+          "nombre": "Marcha Supina (Abdomen Bajo)",
+          "ilustracion": "leg_raise",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 30,
+          "lili": "12 toques por lado",
+          "daniel": "12–15 toques por lado",
+          "tips": [
+            "Acostados boca arriba, piernas a 90° en el aire.",
+            "Baja un talón a tocar suave el suelo sin despegar la lumbar."
+          ],
+          "audioKey": "ex_leg_raise_7184"
+        },
+        {
+          "id": "mie-8",
+          "bloque": "Cierre",
+          "nombre": "Estiramiento de Cadera e Isquios",
+          "ilustracion": "stretch",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 90,
+          "descansoSeg": 0,
+          "lili": "90 seg respirando profundo",
+          "daniel": "90 seg respirando profundo",
+          "tips": [
+            "Estira muslos posteriores y glúteos suavemente.",
+            "Hidrátate al terminar."
+          ],
+          "audioKey": "ex_stretch_1812"
+        }
+      ]
+    },
+    {
+      "diaId": "jueves",
+      "diaNombre": "Jueves",
+      "diaCorto": "Jue",
+      "tipo": "suave",
+      "titulo": "Equilibrio, Silla Funcional y Core",
+      "duracionMin": 12,
+      "enfoque": "Movilidad articular, estabilidad y glúteo medio",
+      "ejercicios": [
+        {
+          "id": "jue-1",
+          "bloque": "Movilidad",
+          "nombre": "Sentarse y Levantarse Controlado",
+          "ilustracion": "chair_squat",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 30,
+          "lili": "10 reps sin impulso",
+          "daniel": "12 reps sin impulso",
+          "tips": [
+            "Toca la silla suave con los glúteos y sube firme sin dejarte caer.",
+            "Fortalece piernas y rodillas de forma muy segura."
+          ],
+          "audioKey": "ex_chair_squat_911"
+        },
+        {
+          "id": "jue-2",
+          "bloque": "Equilibrio",
+          "nombre": "Equilibrio en Un Pie (con Silla cerca)",
+          "ilustracion": "balance",
+          "tipo": "tiempo",
+          "series": 2,
+          "duracionSeg": 30,
+          "descansoSeg": 15,
+          "lili": "30 seg por pierna",
+          "daniel": "30 seg por pierna",
+          "tips": [
+            "Fija la mirada adelante y mantén el abdomen activo.",
+            "Usa la silla solo como apoyo de seguridad si lo necesitas."
+          ],
+          "audioKey": "ex_balance_1540"
+        },
+        {
+          "id": "jue-3",
+          "bloque": "Core Suave",
+          "nombre": "Puente de Glúteos sin Peso",
+          "ilustracion": "glute_bridge",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 30,
+          "lili": "12 reps con pausa arriba",
+          "daniel": "15 reps con pausa arriba",
+          "tips": [
+            "Activa glúteos y descarga tensión de la espalda baja.",
+            "Muy útil después de caminar."
+          ],
+          "audioKey": "ex_glute_bridge_4386"
+        },
+        {
+          "id": "jue-4",
+          "bloque": "Cierre",
+          "nombre": "Estiramiento de Cuello y Hombros",
+          "ilustracion": "stretch",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 90,
+          "descansoSeg": 0,
+          "lili": "90 seg suaves",
+          "daniel": "90 seg suaves",
+          "tips": [
+            "Inclina suavemente la cabeza a cada lado 20 segundos.",
+            "Rota los hombros hacia atrás."
+          ],
+          "audioKey": "ex_stretch_6087"
+        }
+      ]
+    },
+    {
+      "diaId": "viernes",
+      "diaNombre": "Viernes",
+      "diaCorto": "Vie",
+      "tipo": "fuerte",
+      "titulo": "Fuerza Total C + Circuito Core",
+      "duracionMin": 35,
+      "enfoque": "Cuerpo completo, Brazos, Espalda y Cintura",
+      "ejercicios": [
+        {
+          "id": "vie-w1",
+          "bloque": "Calentamiento 1/3",
+          "nombre": "Movilidad de Hombros y Torso",
+          "ilustracion": "warmup_hips",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 5,
+          "lili": "60 seg fluidos",
+          "daniel": "60 seg fluidos",
+          "tips": [
+            "Rotaciones suaves de cintura y brazos.",
+            "Respira amplio."
+          ],
+          "audioKey": "ex_warmup_hips_9212"
+        },
+        {
+          "id": "vie-w2",
+          "bloque": "Calentamiento 2/3",
+          "nombre": "Sentadillas Suaves sin Peso",
+          "ilustracion": "warmup_knees",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 5,
+          "lili": "60 seg suaves",
+          "daniel": "60 seg suaves",
+          "tips": [
+            "Prepara caderas y rodillas.",
+            "Sin prisa."
+          ],
+          "audioKey": "ex_warmup_knees_952"
+        },
+        {
+          "id": "vie-w3",
+          "bloque": "Calentamiento 3/3",
+          "nombre": "Marcha Activa en el Lugar",
+          "ilustracion": "warmup_march",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 60,
+          "descansoSeg": 15,
+          "lili": "60 seg activos",
+          "daniel": "60 seg activos",
+          "tips": [
+            "Eleva pulsaciones suavemente.",
+            "Prepárate con tus mancuernas."
+          ],
+          "audioKey": "ex_warmup_march_5433"
+        },
+        {
+          "id": "vie-2",
+          "bloque": "Fuerza",
+          "nombre": "Sentadilla a la Silla + Press Arriba",
+          "ilustracion": "thruster",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 40,
+          "descansoSeg": 50,
+          "lili": "10–12 reps • 4 kg c/u",
+          "daniel": "12 reps • 6 kg c/u",
+          "tips": [
+            "Toca suave la silla en sentadilla y al subir empuja mancuernas arriba.",
+            "Movimiento completo: tonifica piernas y hombros a la vez."
+          ],
+          "audioKey": "ex_thruster_6986"
+        },
+        {
+          "id": "vie-3",
+          "bloque": "Fuerza",
+          "nombre": "Remo a Un Brazo Apoyado en Silla",
+          "ilustracion": "chair_row",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 45,
+          "descansoSeg": 40,
+          "lili": "12 reps por brazo • 4 kg",
+          "daniel": "12–15 reps por brazo • 6 kg",
+          "tips": [
+            "Apoya una mano firme en el asiento de la silla, espalda plana.",
+            "Lleva el codo hacia el techo pegado al cuerpo."
+          ],
+          "audioKey": "ex_chair_row_5262"
+        },
+        {
+          "id": "vie-4",
+          "bloque": "Fuerza",
+          "nombre": "Elevaciones Laterales de Hombros",
+          "ilustracion": "lateral_raise",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 40,
+          "lili": "10–12 reps • 4 kg c/u",
+          "daniel": "12 reps • 6 kg c/u",
+          "tips": [
+            "Sube brazos hasta altura de hombros con codos levemente doblados.",
+            "Baja lento sin dejar caer el peso."
+          ],
+          "audioKey": "ex_lateral_raise_9057"
+        },
+        {
+          "id": "vie-5",
+          "bloque": "Fuerza",
+          "nombre": "Fondos de Tríceps en Silla",
+          "ilustracion": "triceps_chair",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 45,
+          "lili": "10–12 reps (pies cerca = más fácil)",
+          "daniel": "12–15 reps (piernas extendidas)",
+          "tips": [
+            "Silla firme. Baja rozando el borde con la espalda.",
+            "Tonifica la parte posterior del brazo."
+          ],
+          "audioKey": "ex_triceps_chair_6073"
+        },
+        {
+          "id": "vie-6",
+          "bloque": "Core & Abdomen",
+          "nombre": "Giros Rusos Sentado en Mat",
+          "ilustracion": "russian_twist",
+          "tipo": "reps",
+          "series": 3,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 35,
+          "lili": "16 giros (sin peso o 4 kg)",
+          "daniel": "20 giros (6 kg)",
+          "tips": [
+            "Talones apoyados en el mat, inclina levemente el torso atrás.",
+            "Gira desde el torso, no solo los brazos."
+          ],
+          "audioKey": "ex_russian_twist_1753"
+        },
+        {
+          "id": "vie-7",
+          "bloque": "Core & Abdomen",
+          "nombre": "Plancha con Toque de Hombros",
+          "ilustracion": "shoulder_tap",
+          "tipo": "reps",
+          "series": 2,
+          "tiempoSerieSeg": 35,
+          "descansoSeg": 35,
+          "lili": "8 toques por lado",
+          "daniel": "10 toques por lado",
+          "tips": [
+            "Separa un poco los pies para mayor estabilidad.",
+            "Evita que la cadera se balancee al levantar una mano."
+          ],
+          "audioKey": "ex_shoulder_tap_9729"
+        },
+        {
+          "id": "vie-8",
+          "bloque": "Cierre",
+          "nombre": "Estiramiento General de Viernes",
+          "ilustracion": "stretch",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 90,
+          "descansoSeg": 0,
+          "lili": "90 seg • Cuerpo completo",
+          "daniel": "90 seg • Cuerpo completo",
+          "tips": [
+            "¡Semana fuerte completada!",
+            "Respira profundo y disfruta la sensación de energía."
+          ],
+          "audioKey": "ex_stretch_7876"
+        }
+      ]
+    },
+    {
+      "diaId": "sabado",
+      "diaNombre": "Sábado",
+      "diaCorto": "Sáb",
+      "tipo": "descanso",
+      "titulo": "Descanso Activo • Caminata",
+      "duracionMin": 45,
+      "enfoque": "10.000 pasos juntos y recuperación muscular",
+      "ejercicios": [
+        {
+          "id": "sab-1",
+          "bloque": "Actividad",
+          "nombre": "Caminata Activa Juntos",
+          "ilustracion": "walk",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 1800,
+          "descansoSeg": 0,
+          "lili": "Meta: 10.000 pasos a buen ritmo",
+          "daniel": "Meta: 10.000 pasos a buen ritmo",
+          "tips": [
+            "La caminata complementa la fuerza ayudando a la grasa abdominal.",
+            "No olviden su creatina e hidratación."
+          ],
+          "audioKey": "ex_walk_5722"
+        }
+      ]
+    },
+    {
+      "diaId": "domingo",
+      "diaNombre": "Domingo",
+      "diaCorto": "Dom",
+      "tipo": "descanso",
+      "titulo": "Descanso y Recarga",
+      "duracionMin": 30,
+      "enfoque": "Pasos suaves, buena alimentación y 8 h de sueño",
+      "ejercicios": [
+        {
+          "id": "dom-1",
+          "bloque": "Actividad",
+          "nombre": "Caminata Suave y Descanso",
+          "ilustracion": "walk",
+          "tipo": "tiempo",
+          "series": 1,
+          "duracionSeg": 1200,
+          "descansoSeg": 0,
+          "lili": "Caminata relajada + 8 h de sueño",
+          "daniel": "Caminata relajada + 8 h de sueño",
+          "tips": [
+            "El músculo se fortalece mientras descansan.",
+            "Mantengan su creatina diaria incluso hoy."
+          ],
+          "audioKey": "ex_walk_4884"
+        }
+      ]
+    }
+  ]
+}

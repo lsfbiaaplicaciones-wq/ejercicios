@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0D9488" />
+  <meta name="description" content="Aplicación semanal de ejercicios en casa para Lili y Daniel con mancuernas, guía visual, temporizador e historial." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Lili &amp; Daniel Fit — Rutinas en Casa</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <path d="M6 7v10M18 7v10M6 12h12M3 9v6M21 9v6" />
+          </svg>
+        </div>
+        <div>
+          <h1 class="app-title">Lili &amp; Daniel Fit</h1>
+          <p class="app-subtitle">Lili 4 kg • Daniel 6 kg</p>
+        </div>
+      </div>
+      <div class="header-streak" id="header-streak" title="Días completados esta semana">
+        <span class="streak-dot"></span>
+        <span id="streak-text">0 días</span>
+      </div>
+    </header>
+
+    <!-- Main Views -->
+    <main class="app-main">
+      <!-- TAB 1: HOY -->
+      <section id="view-hoy" class="view active" aria-label="Rutina de hoy">
+        <div class="day-pills" id="day-pills" role="tablist" aria-label="Elegir día"></div>
+        <div id="hoy-card-container"></div>
+        <div class="section-header-row">
+          <h2 class="section-heading">Ejercicios de la sesión</h2>
+          <span class="muted-count" id="hoy-ejercicios-count"></span>
+        </div>
+        <div id="hoy-ejercicios-list" class="exercise-list"></div>
+      </section>
+
+      <!-- TAB 2: SEMANA -->
+      <section id="view-semana" class="view" aria-label="Plan semanal">
+        <div class="view-intro">
+          <h2 class="section-heading-lg">Plan Semanal</h2>
+          <p class="muted-text">3 días fuertes (Lun, Mié, Vie) + 2 días suaves de movilidad + caminatas.</p>
+        </div>
+        <div id="semana-list" class="week-list"></div>
+      </section>
+
+      <!-- TAB 3: HISTORIAL -->
+      <section id="view-historial" class="view" aria-label="Historial de entrenamientos">
+        <div class="view-intro">
+          <h2 class="section-heading-lg">Historial</h2>
+          <p class="muted-text">Tu constancia semanal y mensual en el teléfono.</p>
+        </div>
+        <div class="stats-row" id="historial-stats"></div>
+        <div class="calendar-card" id="historial-calendar"></div>
+        <div class="history-tip">
+          <p><strong>Tip:</strong> Puedes tocar cualquier día en el calendario para marcarlo o desmarcarlo manualmente.</p>
+        </div>
+      </section>
+
+      <!-- TAB 4: GUÍA & HÁBITOS -->
+      <section id="view-guia" class="view" aria-label="Guía de hábitos y suplementos">
+        <div class="view-intro">
+          <h2 class="section-heading-lg">Guía &amp; Hábitos</h2>
+          <p class="muted-text">Recordatorio práctico para potenciar fuerza, tonificación y zona abdominal.</p>
+        </div>
+
+        <div class="guide-stack">
+          <article class="guide-card">
+            <div class="guide-badge guide-badge-teal">Suplementos diarios</div>
+            <h3>Creatina, Omega-3, Colágeno y Jalea</h3>
+            <ul class="guide-list">
+              <li>
+                <strong>Creatina (3 a 5 g al día):</strong> Tómala <em>todos los días</em> (incluidos sábados y domingos), a la hora que te sea más fácil recordar, acompañada de un vaso de agua. Funciona por constancia diaria.
+              </li>
+              <li>
+                <strong>Omega-3:</strong> Idealmente junto con el almuerzo o una comida que tenga grasas saludables (palta, aceite de oliva, huevo) para absorberse mejor.
+              </li>
+              <li>
+                <strong>Colágeno + Jalea / Gelatina (post-almuerzo):</strong> Excelente rutina. Si sumas una fruta rica en vitamina C (naranja, kiwi, limón) cerca, apoyas aún más la síntesis de colágeno.
+              </li>
+            </ul>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-badge guide-badge-amber">Caminatas • 10.000 pasos</div>
+            <h3>Cuándo aprovechar los pasos</h3>
+            <ul class="guide-list">
+              <li>
+                <strong>10–15 min después de almorzar o cenar:</strong> Caminar suave tras comer ayuda a regular la glucosa en sangre y favorece la reducción de grasa abdominal.
+              </li>
+              <li>
+                <strong>Días de fuerza:</strong> Sus 10.000 pasos diarios no compiten con las mancuernas; al revés, aceleran la recuperación.
+              </li>
+            </ul>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-badge guide-badge-blue">Alimentación y descanso</div>
+            <h3>Claves para 48 y 52 años</h3>
+            <ul class="guide-list">
+              <li>
+                <strong>Proteína en cada comida:</strong> Huevos, pollo, pescado, legumbres o yogur natural ayudan a mantener y tonificar el músculo (especialmente importante en postmenopausia).
+              </li>
+              <li>
+                <strong>Hidratación + 8 h de sueño:</strong> El músculo se repara mientras duermen. Mantener cenas livianas y sin pantallas tarde potencia el descanso.
+              </li>
+            </ul>
+          </article>
+
+          <p class="guide-disclaimer">
+            Nota: Esta guía es de bienestar general y organización de hábitos; ante dudas específicas de salud, consulta siempre con tu médico.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button class="nav-btn active" data-tab="hoy" id="nav-hoy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Hoy</span>
+      </button>
+      <button class="nav-btn" data-tab="semana" id="nav-semana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Semana</span>
+      </button>
+      <button class="nav-btn" data-tab="historial" id="nav-historial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <span>Historial</span>
+      </button>
+      <button class="nav-btn" data-tab="guia" id="nav-guia">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"></path>
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+        </svg>
+        <span>Guía</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- MODO GUIADO EN VIVO (FULLSCREEN) -->
+  <div id="guided-overlay" class="guided-overlay hidden" role="dialog" aria-modal="true" aria-label="Entrenamiento guiado">
+    <div class="guided-shell">
+      <header class="guided-header">
+        <button class="icon-btn" id="guided-close" aria-label="Salir del modo guiado">✕</button>
+        <div class="guided-progress-wrap">
+          <div class="guided-progress-meta">
+            <span id="guided-step-label">Ejercicio 1 de 8</span>
+            <span id="guided-block-badge" class="block-pill">Fuerza</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="guided-progress-fill"></div>
+          </div>
+        </div>
+        <button class="toggle-chip active" id="toggle-voice" title="Voz guía en español">🔊 Voz</button>
+      </header>
+
+      <div class="guided-body" id="guided-body">
+        <div class="illustration-stage" id="guided-illustration"></div>
+
+        <h2 class="guided-exercise-title" id="guided-title">Nombre del ejercicio</h2>
+
+        <!-- Tarjetas Lili y Daniel lado a lado -->
+        <div class="duo-cards">
+          <div class="person-card person-lili">
+            <div class="person-tag">Lili • 4 kg</div>
+            <p class="person-target" id="guided-lili"></p>
+          </div>
+          <div class="person-card person-daniel">
+            <div class="person-tag">Daniel • 6 kg</div>
+            <p class="person-target" id="guided-daniel"></p>
+          </div>
+        </div>
+
+        <!-- Temporizador o Control de Series -->
+        <div class="timer-panel" id="guided-timer-panel"></div>
+
+        <!-- Tips de técnica -->
+        <div class="tips-box">
+          <div class="tips-title">Técnica clave</div>
+          <ul id="guided-tips"></ul>
+        </div>
+      </div>
+
+      <footer class="guided-footer">
+        <button class="btn-secondary" id="guided-prev">← Anterior</button>
+        <button class="btn-primary" id="guided-next">Siguiente →</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- MODAL DE CELEBRACIÓN -->
+  <div id="done-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="done-emoji" aria-hidden="true">🎉</div>
+      <h2>¡Excelente entrenamiento juntos!</h2>
+      <p id="done-summary">Completaron la sesión de hoy y quedó guardada en su historial.</p>
+      <button class="btn-primary full-width" id="done-close">Volver al inicio</button>
+    </div>
+  </div>
+
+  <script src="./audio_clips.js"></script>
+  <script src="./illustrations.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
