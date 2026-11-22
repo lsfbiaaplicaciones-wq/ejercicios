@@ -44,26 +44,92 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(hist));
   }
 
+  let cloudDocRef = null;
+  let initialCloudSyncDone = false;
+
+  function initCloudSync() {
+    try {
+      if (typeof firebase === 'undefined' || !firebase.firestore) return;
+      if (!firebase.apps.length) {
+        firebase.initializeApp({
+          apiKey: "AIzaSyA1rL-1n7VyqIZSkiLN-rU3jkclf0kmFnQ",
+          authDomain: "cuchufly-fit.firebaseapp.com",
+          projectId: "cuchufly-fit",
+          storageBucket: "cuchufly-fit.firebasestorage.app",
+          messagingSenderId: "1015958832944",
+          appId: "1:1015958832944:web:9c9f538dee179eecf0eaf5"
+        });
+      }
+      const db = firebase.firestore();
+      cloudDocRef = db.collection('families').doc('cuchufly-fit');
+
+      cloudDocRef.onSnapshot((snap) => {
+        const cloudHist = (snap.exists && snap.data() && snap.data().history) ? snap.data().history : {};
+        const localHist = getHistory();
+
+        if (!initialCloudSyncDone) {
+          initialCloudSyncDone = true;
+          const merged = { ...cloudHist, ...localHist };
+          const hasLocalOnly = Object.keys(localHist).some((k) => !cloudHist[k]);
+          if (hasLocalOnly && Object.keys(merged).length > 0) {
+            cloudDocRef.set({ history: merged }, { merge: true }).catch(() => {});
+          }
+          saveHistory(merged);
+        } else {
+          saveHistory(cloudHist);
+        }
+
+        if (appData) {
+          renderHeaderStreak();
+          renderHoy();
+          renderHistorial();
+        }
+      }, (err) => {
+        console.warn('Firestore sync en espera:', err && err.code ? err.code : err);
+      });
+    } catch (err) {
+      console.warn('No se pudo iniciar sync en la nube:', err);
+    }
+  }
+
+  function syncDateToCloud(dateKey, entry) {
+    if (!cloudDocRef) return;
+    cloudDocRef.set({ history: { [dateKey]: entry } }, { merge: true }).catch(() => {});
+  }
+
+  function deleteDateFromCloud(dateKey) {
+    if (!cloudDocRef || typeof firebase === 'undefined') return;
+    cloudDocRef.set({
+      history: { [dateKey]: firebase.firestore.FieldValue.delete() }
+    }, { merge: true }).catch(() => {});
+  }
+
   function markTodayDone(dayObj) {
     const hist = getHistory();
     const key = toDateKey(new Date());
-    hist[key] = {
+    const entry = {
       diaId: dayObj.diaId,
       titulo: dayObj.titulo,
       tipo: dayObj.tipo,
       ts: Date.now()
     };
+    hist[key] = entry;
     saveHistory(hist);
+    syncDateToCloud(key, entry);
   }
 
   function toggleDateHistory(dateKey) {
     const hist = getHistory();
     if (hist[dateKey]) {
       delete hist[dateKey];
+      saveHistory(hist);
+      deleteDateFromCloud(dateKey);
     } else {
-      hist[dateKey] = { diaId: 'manual', titulo: 'Entrenamiento completado', tipo: 'fuerte', ts: Date.now() };
+      const entry = { diaId: 'manual', titulo: 'Entrenamiento completado', tipo: 'fuerte', ts: Date.now() };
+      hist[dateKey] = entry;
+      saveHistory(hist);
+      syncDateToCloud(dateKey, entry);
     }
-    saveHistory(hist);
     renderHeaderStreak();
     renderHoy();
     renderHistorial();
@@ -779,6 +845,7 @@
 
     renderHeaderStreak();
     renderHoy();
+    initCloudSync();
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
