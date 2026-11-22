@@ -1,7 +1,7 @@
 {
   "app": {
     "titulo": "Cuchufly Fit",
-    "subtitulo": "Entrenamiento guiado en casa • 4 kg / 6 kg",
+    "subtitulo": "Entrenamiento guiado en casa",
     "perfiles": {
       "lili": {
         "nombre": "Lili",
@@ -102,8 +102,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "12–15 reps • 4 kg c/u a los lados",
-          "daniel": "12–15 reps • 6 kg c/u a los lados",
+          "lili": "12–15 reps • A los lados",
+          "daniel": "12–15 reps • A los lados",
           "tips": [
             "Pies al ancho de hombros, lleva la cadera atrás como sentándote.",
             "Mantén el pecho erguido y rodillas alineadas con los pies."
@@ -119,8 +119,8 @@
           "series": 3,
           "tiempoSerieSeg": 35,
           "descansoSeg": 45,
-          "lili": "10–12 reps • 4 kg c/u",
-          "daniel": "10–12 reps • 6 kg c/u",
+          "lili": "10–12 reps",
+          "daniel": "10–12 reps",
           "tips": [
             "Aprieta abdomen y glúteos para no arquear la espalda baja.",
             "Empuja arriba sin encoger los hombros hacia las orejas."
@@ -136,8 +136,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "12 reps • 4 kg c/u",
-          "daniel": "12–15 reps • 6 kg c/u",
+          "lili": "12 reps",
+          "daniel": "12–15 reps",
           "tips": [
             "Inclina el torso hacia adelante con la espalda totalmente recta.",
             "Tira las mancuernas hacia la cadera juntando los omóplatos."
@@ -153,8 +153,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 40,
-          "lili": "15 reps • 1 mancuerna 4 kg en cadera",
-          "daniel": "15 reps • 1 o 2 mancuernas 6 kg",
+          "lili": "15 reps • 1 mancuerna en cadera",
+          "daniel": "15 reps • 1 o 2 mancuernas",
           "tips": [
             "Apoya bien los talones y sube la cadera apretando glúteos 1 seg arriba.",
             "El empuje nace de la cadera, sin arquear la lumbar."
@@ -362,8 +362,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "12 reps • 4 kg c/u",
-          "daniel": "12–15 reps • 6 kg c/u",
+          "lili": "12 reps",
+          "daniel": "12–15 reps",
           "tips": [
             "Rodillas levemente flexionadas, lleva la cadera hacia atrás.",
             "Baja mancuernas pegadas a muslos con espalda recta y sube apretando glúteos."
@@ -379,8 +379,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "12 reps • 4 kg c/u",
-          "daniel": "12–15 reps • 6 kg c/u",
+          "lili": "12 reps",
+          "daniel": "12–15 reps",
           "tips": [
             "Codos a 45° respecto al cuerpo (no totalmente abiertos en T).",
             "Baja hasta tocar suave el suelo con los codos y empuja arriba."
@@ -396,8 +396,8 @@
           "series": 3,
           "tiempoSerieSeg": 45,
           "descansoSeg": 45,
-          "lili": "10 reps por pierna • 4 kg c/u",
-          "daniel": "10–12 reps por pierna • 6 kg c/u",
+          "lili": "10 reps por pierna",
+          "daniel": "10–12 reps por pierna",
           "tips": [
             "Paso largo atrás bajando suave la rodilla trasera.",
             "Pueden apoyar una mano en la silla si buscan más estabilidad."
@@ -413,8 +413,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 40,
-          "lili": "12 reps por brazo • 4 kg",
-          "daniel": "12 reps por brazo • 6 kg",
+          "lili": "12 reps por brazo",
+          "daniel": "12 reps por brazo",
           "tips": [
             "Mantén codos pegados a los costados, sin balancear la espalda.",
             "Baja en 2 segundos controlando el peso."
@@ -622,8 +622,8 @@
           "series": 3,
           "tiempoSerieSeg": 40,
           "descansoSeg": 50,
-          "lili": "10–12 reps • 4 kg c/u",
-          "daniel": "12 reps • 6 kg c/u",
+          "lili": "10–12 reps",
+          "daniel": "12 reps",
           "tips": [
             "Toca suave la silla en sentadilla y al subir empuja mancuernas arriba.",
             "Movimiento completo: tonifica piernas y hombros a la vez."
@@ -639,8 +639,8 @@
           "series": 3,
           "tiempoSerieSeg": 45,
           "descansoSeg": 40,
-          "lili": "12 reps por brazo • 4 kg",
-          "daniel": "12–15 reps por brazo • 6 kg",
+          "lili": "12 reps por brazo",
+          "daniel": "12–15 reps por brazo",
           "tips": [
             "Apoya una mano firme en el asiento de la silla, espalda plana.",
             "Lleva el codo hacia el techo pegado al cuerpo."
@@ -656,8 +656,8 @@
           "series": 3,
           "tiempoSerieSeg": 35,
           "descansoSeg": 40,
-          "lili": "10–12 reps • 4 kg c/u",
-          "daniel": "12 reps • 6 kg c/u",
+          "lili": "10–12 reps",
+          "daniel": "12 reps",
           "tips": [
             "Sube brazos hasta altura de hombros con codos levemente doblados.",
             "Baja lento sin dejar caer el peso."
@@ -690,8 +690,8 @@
           "series": 3,
           "tiempoSerieSeg": 35,
           "descansoSeg": 35,
-          "lili": "16 giros (sin peso o 4 kg)",
-          "daniel": "20 giros (6 kg)",
+          "lili": "16 giros (con o sin mancuerna)",
+          "daniel": "20 giros (con mancuerna)",
           "tips": [
             "Talones apoyados en el mat, inclina levemente el torso atrás.",
             "Gira desde el torso, no solo los brazos."

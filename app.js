@@ -237,6 +237,36 @@
     return { cls: 'badge-descanso', label: 'Descanso Activo' };
   }
 
+  function getCuchufliMessage(hist, dia, todayDone) {
+    const weekCount = getWeekCount(hist);
+    const totalCount = getTotalCount(hist);
+    const streak = getCurrentStreak(hist);
+
+    if (todayDone) {
+      if (streak >= 3) {
+        return `¡${streak} días seguidos! <strong>Cuchuflí</strong> ronronea orgullosa. Misión cumplida por hoy.`;
+      }
+      return `<strong>Cuchuflí</strong> celebra el entrenamiento de hoy. ¡Ahora toca descansar y jugar con ella!`;
+    }
+
+    if (streak >= 3) {
+      return `¡Racha de ${streak} días! <strong>Cuchuflí</strong> ya se acomodó en el mat para ver cómo la alargan.`;
+    }
+    if (weekCount >= 4) {
+      return `¡${weekCount} días esta semana! <strong>Cuchuflí</strong> dice que hoy cierran con broche de oro.`;
+    }
+    if (weekCount >= 1) {
+      return `Llevan ${weekCount} ${weekCount === 1 ? 'día' : 'días'} esta semana. <strong>Cuchuflí</strong> los espera en el mat para sumar otro.`;
+    }
+    if (totalCount > 0) {
+      return `<strong>Cuchuflí</strong> revisó sus ${totalCount} días acumulados y dice: ¡hoy es buen día para retomar!`;
+    }
+    if (dia.tipo === 'descanso') {
+      return `Hoy toca caminata y relajo. <strong>Cuchuflí</strong> cuida el mat mientras ustedes suman pasos.`;
+    }
+    return `<strong>Cuchuflí</strong> ya está instalada en el mat. ¡A entrenar juntos para empezar la racha!`;
+  }
+
   function renderHoy() {
     renderDayPills();
     const dia = appData.semana[selectedDayIndex];
@@ -257,7 +287,7 @@
         <div class="cuchufli-banner">
           <div class="cuchufli-banner-icon">${window.CUCHUFLI_SLEEP_SVG || ''}</div>
           <div class="cuchufli-banner-text">
-            <strong>Cuchuflí</strong> ya está instalada en el mat. ¡A entrenar con ánimo para tener energía y jugar con ella!
+            ${getCuchufliMessage(hist, dia, todayDone)}
           </div>
         </div>
         ${todayDone ? `<div class="completed-banner">✓ ¡Entrenamiento de hoy completado!</div>` : ''}
