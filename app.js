@@ -139,19 +139,27 @@
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   }
 
-  function playClipQueue(items) {
-    if (!voiceEnabled || !items || !items.length) return;
+  function playClipQueue(items, onComplete) {
+    if (!voiceEnabled || !items || !items.length) {
+      if (onComplete) onComplete();
+      return;
+    }
     stopVoice();
 
     const playNext = (idx) => {
-      if (!voiceEnabled || idx >= items.length) return;
+      if (!voiceEnabled || idx >= items.length) {
+        if (onComplete) onComplete();
+        return;
+      }
       const { key, fallback } = items[idx];
       const src = window.AUDIO_CLIPS && key ? window.AUDIO_CLIPS[key] : null;
       if (src) {
         currentAudio = new Audio(src);
         currentAudio.onended = () => playNext(idx + 1);
         currentAudio.onerror = () => playNext(idx + 1);
-        currentAudio.play().catch(() => {});
+        currentAudio.play().catch(() => {
+          if (onComplete) onComplete();
+        });
       } else if (fallback && 'speechSynthesis' in window) {
         try {
           const utter = new SpeechSynthesisUtterance(fallback);
@@ -465,12 +473,21 @@
       guidedIndex === total - 1 ? 'Finalizar 🎉' : 'Siguiente →';
 
     if (phase === 'PREP') {
-      timerTotalSeconds = 10;
-      timerSecondsLeft = 10;
-      playClipQueue([
-        { key: 'prep_start', fallback: 'Acomódense, en diez segundos partimos.' },
-        { key: ej.audioKey, fallback: `Siguiente: ${ej.nombre}` }
-      ]);
+      timerTotalSeconds = 5;
+      timerSecondsLeft = 5;
+      renderTimerUI();
+      playClipQueue(
+        [
+          { key: 'prep_start', fallback: 'Acomódense, en cinco segundos partimos.' },
+          { key: ej.audioKey, fallback: `Siguiente: ${ej.nombre}` }
+        ],
+        () => {
+          if (phase === 'PREP' && !document.getElementById('guided-overlay').classList.contains('hidden')) {
+            startCountdown();
+          }
+        }
+      );
+      return;
     } else if (phase === 'WORK') {
       const workSec = ej.tipo === 'tiempo' ? (ej.duracionSeg || 40) : (ej.tiempoSerieSeg || 40);
       timerTotalSeconds = workSec;
