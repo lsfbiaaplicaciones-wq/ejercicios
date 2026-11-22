@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cuchufly-fit-v3';
+const CACHE_NAME = 'cuchufly-fit-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -29,13 +29,17 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Network-first para rutinas.json para reflejar actualizaciones en tiempo real
-  if (event.request.url.includes('rutinas.json')) {
+  if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+  if (url.origin === self.location.origin) {
     event.respondWith(
       fetch(event.request)
         .then((res) => {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          if (res && res.status === 200) {
+            const clone = res.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
           return res;
         })
         .catch(() => caches.match(event.request))

@@ -254,7 +254,6 @@
         </div>
         <h2 class="hero-title">${dia.titulo}</h2>
         <p class="hero-focus">${dia.enfoque}</p>
-        <div class="auto-hint-pill">✨ Modo automático manos libres • Con voz chilena</div>
         <div class="cuchufli-banner">
           <div class="cuchufli-banner-icon">${window.CUCHUFLI_SLEEP_SVG || ''}</div>
           <div class="cuchufli-banner-text">
