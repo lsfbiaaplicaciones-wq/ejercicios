@@ -192,6 +192,20 @@
     setTimeout(() => playTone(880, 0.28, 0.18), 140);
   }
 
+  function playStartWhistle() {
+    playTone(880, 0.12, 0.22);
+    setTimeout(() => playTone(1175, 0.24, 0.24), 120);
+  }
+
+  function playEndCue() {
+    playTone(784, 0.14, 0.20);
+    setTimeout(() => playTone(523, 0.28, 0.22), 140);
+  }
+
+  function playCountdownTick() {
+    playTone(620, 0.09, 0.16);
+  }
+
   let currentAudio = null;
   let motIndex = 0;
   let restIndex = 0;
@@ -546,8 +560,59 @@
     document.getElementById('done-modal').classList.remove('hidden');
   }
 
+  let previewShownForRest = false;
+
+  function renderStageContent(ej, isPreviewNext = false) {
+    const svg = window.EXERCISE_ILLUSTRATIONS[ej.ilustracion] || window.EXERCISE_ILLUSTRATIONS.warmup;
+    const stage = document.getElementById('guided-illustration');
+    stage.innerHTML =
+      `${svg}<div class="cuchufli-corner" title="Cuchuflí acompañando">${window.CUCHUFLI_SLEEP_SVG || ''}</div>`;
+    document.getElementById('guided-title').textContent = isPreviewNext ? `⏭ Siguiente: ${ej.nombre}` : ej.nombre;
+    document.getElementById('guided-lili').textContent = ej.lili;
+    document.getElementById('guided-daniel').textContent = ej.daniel;
+    document.getElementById('guided-tips').innerHTML = ej.tips.map((t) => `<li>${t}</li>`).join('');
+  }
+
+  function updateStageVisualState() {
+    const stage = document.getElementById('guided-illustration');
+    if (!stage || !guidedDay) return;
+
+    const ej = guidedDay.ejercicios[guidedIndex];
+    const total = guidedDay.ejercicios.length;
+    const seriesCount = ej.series || 1;
+    const oldTag = stage.querySelector('.stage-status-tag');
+    if (oldTag) oldTag.remove();
+
+    stage.classList.remove('is-paused', 'is-preview');
+
+    const isManualPause = !timerRunning && phase !== 'PREP';
+    const isRestPreview = phase === 'REST' && timerSecondsLeft <= 5 && timerRunning;
+
+    if (isRestPreview) {
+      if (currentSerie >= seriesCount && guidedIndex < total - 1 && !previewShownForRest) {
+        previewShownForRest = true;
+        renderStageContent(guidedDay.ejercicios[guidedIndex + 1], true);
+      }
+      stage.classList.add('is-preview');
+      const tag = document.createElement('div');
+      tag.className = 'stage-status-tag is-preview';
+      tag.textContent = '⏳ Prepárate';
+      stage.appendChild(tag);
+      return;
+    }
+
+    if (phase === 'REST' || isManualPause) {
+      stage.classList.add('is-paused');
+      const tag = document.createElement('div');
+      tag.className = 'stage-status-tag';
+      tag.textContent = phase === 'REST' ? '⏸ Momento de pausa' : '⏸ En pausa';
+      stage.appendChild(tag);
+    }
+  }
+
   function loadStepAndRun() {
     stopTimer();
+    previewShownForRest = false;
     const ej = guidedDay.ejercicios[guidedIndex];
     const total = guidedDay.ejercicios.length;
 
@@ -555,14 +620,7 @@
     document.getElementById('guided-block-badge').textContent = ej.bloque;
     document.getElementById('guided-progress-fill').style.width = `${((guidedIndex + 1) / total) * 100}%`;
 
-    const svg = window.EXERCISE_ILLUSTRATIONS[ej.ilustracion] || window.EXERCISE_ILLUSTRATIONS.warmup;
-    document.getElementById('guided-illustration').innerHTML =
-      `${svg}<div class="cuchufli-corner" title="Cuchuflí acompañando">${window.CUCHUFLI_SLEEP_SVG || ''}</div>`;
-    document.getElementById('guided-title').textContent = ej.nombre;
-    document.getElementById('guided-lili').textContent = ej.lili;
-    document.getElementById('guided-daniel').textContent = ej.daniel;
-
-    document.getElementById('guided-tips').innerHTML = ej.tips.map((t) => `<li>${t}</li>`).join('');
+    renderStageContent(ej, false);
     document.getElementById('guided-prev').disabled = guidedIndex === 0;
     document.getElementById('guided-next').textContent =
       guidedIndex === total - 1 ? 'Finalizar 🎉' : 'Siguiente →';
@@ -571,6 +629,7 @@
       timerTotalSeconds = 5;
       timerSecondsLeft = 5;
       renderTimerUI();
+      updateStageVisualState();
       playClipQueue(
         [
           { key: 'prep_start', fallback: 'Acomódense, en cinco segundos partimos.' },
@@ -587,8 +646,7 @@
       const workSec = ej.tipo === 'tiempo' ? (ej.duracionSeg || 40) : (ej.tiempoSerieSeg || 40);
       timerTotalSeconds = workSec;
       timerSecondsLeft = workSec;
-      // Pitido agudo claro de INICIO de ejercicio/serie
-      playTone(940, 0.22, 0.2);
+      playStartWhistle();
 
       if (currentSerie === 1) {
         if (guidedIndex === 0) {
@@ -627,6 +685,7 @@
 
     renderTimerUI();
     startCountdown();
+    updateStageVisualState();
   }
 
   function advancePhaseAutomatically() {
@@ -642,7 +701,7 @@
     }
 
     if (phase === 'WORK') {
-      playChime();
+      playEndCue();
       if (currentSerie < seriesCount) {
         if ((ej.descansoSeg || 0) > 0) {
           phase = 'REST';
@@ -670,7 +729,6 @@
     }
 
     if (phase === 'REST') {
-      playChime();
       if (currentSerie < seriesCount) {
         currentSerie++;
         phase = 'WORK';
@@ -690,13 +748,19 @@
     stopTimer();
     timerRunning = true;
     updateToggleBtnText();
+    updateStageVisualState();
 
     timerInterval = setInterval(() => {
       timerSecondsLeft--;
       if (timerSecondsLeft > 0 && timerSecondsLeft <= 3) {
-        playTone(540, 0.09, 0.12);
+        playCountdownTick();
       }
-      updateTimerVisuals();
+      if (phase === 'REST' && timerSecondsLeft === 5) {
+        renderTimerUI();
+        updateStageVisualState();
+      } else {
+        updateTimerVisuals();
+      }
 
       if (timerSecondsLeft <= 0) {
         advancePhaseAutomatically();
@@ -729,6 +793,7 @@
     let subText = seriesCount > 1 ? `Serie ${currentSerie} de ${seriesCount}` : 'Tiempo continuo';
     let nextText = '';
     let ringCls = '';
+    let panelCls = 'timer-panel';
 
     if (phase === 'PREP') {
       badgeCls = 'phase-prep';
@@ -736,23 +801,45 @@
       subText = 'En posición, comenzamos en breve...';
       ringCls = 'prep';
     } else if (phase === 'REST') {
-      badgeCls = 'phase-rest';
-      badgeText = 'Descanso';
-      ringCls = 'rest';
-      if (currentSerie < seriesCount) {
-        subText = `Recupera • Viene Serie ${currentSerie + 1} de ${seriesCount}`;
-      } else if (guidedIndex < total - 1) {
-        subText = 'Recupera y hidrátate';
-        nextText = `Siguiente: ${guidedDay.ejercicios[guidedIndex + 1].nombre}`;
+      const isPreviewWindow = timerSecondsLeft <= 5 && timerRunning;
+      if (isPreviewWindow) {
+        badgeCls = 'phase-prep';
+        badgeText = '⏳ Prepárate';
+        ringCls = 'prep';
+        panelCls = 'timer-panel is-preview';
+        if (currentSerie < seriesCount) {
+          subText = `En posición • Serie ${currentSerie + 1} de ${seriesCount}`;
+        } else if (guidedIndex < total - 1) {
+          subText = 'En posición para el siguiente ejercicio';
+          nextText = `Siguiente: ${guidedDay.ejercicios[guidedIndex + 1].nombre}`;
+        }
+      } else {
+        badgeCls = 'phase-rest';
+        badgeText = '⏸ Momento de pausa';
+        ringCls = 'rest';
+        panelCls = 'timer-panel is-rest';
+        if (currentSerie < seriesCount) {
+          subText = `Descanso entre series • Viene Serie ${currentSerie + 1} de ${seriesCount}`;
+        } else if (guidedIndex < total - 1) {
+          subText = 'Descanso entre ejercicios • Recupera';
+          nextText = `Luego viene: ${guidedDay.ejercicios[guidedIndex + 1].nombre}`;
+        }
       }
     } else if (guidedIndex < total - 1 && currentSerie === seriesCount) {
       nextText = `Luego: ${guidedDay.ejercicios[guidedIndex + 1].nombre}`;
+    }
+
+    if (!timerRunning && phase !== 'PREP' && phase !== 'REST') {
+      badgeCls = 'phase-rest';
+      badgeText = '⏸ En pausa';
+      panelCls = 'timer-panel is-rest';
     }
 
     const ratio = Math.max(0, timerSecondsLeft) / Math.max(1, timerTotalSeconds);
     const offset = RING_CIRCUMFERENCE * (1 - ratio);
 
     const panel = document.getElementById('guided-timer-panel');
+    panel.className = panelCls;
     panel.innerHTML = `
       <div class="ring-timer-wrap">
         <div class="ring-center-box">
@@ -771,7 +858,7 @@
         </div>
       </div>
       <div class="timer-actions">
-        <button class="btn-sm primary" id="auto-toggle">⏸ Pausar</button>
+        <button class="btn-sm primary" id="auto-toggle">${timerRunning ? '⏸ Pausar' : '▶ Continuar'}</button>
         <button class="btn-sm" id="auto-skip">Saltar etapa ⏭</button>
       </div>
     `;
@@ -779,9 +866,11 @@
     document.getElementById('auto-toggle').addEventListener('click', () => {
       if (timerRunning) {
         stopTimer();
-        updateToggleBtnText();
+        renderTimerUI();
+        updateStageVisualState();
       } else {
         startCountdown();
+        renderTimerUI();
       }
     });
 

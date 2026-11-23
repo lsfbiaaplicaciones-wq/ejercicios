@@ -100,13 +100,13 @@
           "ilustracion": "squat",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 45,
-          "lili": "12–15 reps • A los lados",
-          "daniel": "12–15 reps • A los lados",
+          "lili": "15–18 reps • Mancuernas en hombros (pausa 1 seg abajo)",
+          "daniel": "15–18 reps • Mancuernas en hombros (pausa 1 seg abajo)",
           "tips": [
-            "Pies al ancho de hombros, lleva la cadera atrás como sentándote.",
-            "Mantén el pecho erguido y rodillas alineadas con los pies."
+            "Sube las mancuernas a la altura de los hombros (codos al frente) para exigir más piernas y abdomen.",
+            "Baja lento en 3 segundos, haz una pausa breve abajo y empuja fuerte."
           ],
           "audioKey": "ex_squat_5594"
         },
@@ -117,10 +117,10 @@
           "ilustracion": "shoulder_press",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 35,
+          "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "10–12 reps",
-          "daniel": "10–12 reps",
+          "lili": "12–15 reps • Bajada lenta en 3 seg",
+          "daniel": "12–15 reps • Bajada lenta en 3 seg",
           "tips": [
             "Aprieta abdomen y glúteos para no arquear la espalda baja.",
             "Empuja arriba sin encoger los hombros hacia las orejas."
@@ -134,10 +134,10 @@
           "ilustracion": "row",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 45,
-          "lili": "12 reps",
-          "daniel": "12–15 reps",
+          "lili": "14–16 reps • Pausa 1 seg arriba",
+          "daniel": "14–16 reps • Pausa 1 seg arriba",
           "tips": [
             "Inclina el torso hacia adelante con la espalda totalmente recta.",
             "Tira las mancuernas hacia la cadera juntando los omóplatos."
@@ -151,10 +151,10 @@
           "ilustracion": "glute_bridge",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 40,
-          "lili": "15 reps • 1 mancuerna en cadera",
-          "daniel": "15 reps • 1 o 2 mancuernas",
+          "lili": "16–20 reps • 2 mancuernas en cadera (pausa 2 seg arriba)",
+          "daniel": "18–20 reps • 2 mancuernas en cadera (pausa 2 seg arriba)",
           "tips": [
             "Apoya bien los talones y sube la cadera apretando glúteos 1 seg arriba.",
             "El empuje nace de la cadera, sin arquear la lumbar."
@@ -360,10 +360,10 @@
           "ilustracion": "rdl",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 45,
-          "lili": "12 reps",
-          "daniel": "12–15 reps",
+          "lili": "14–16 reps • Bajada controlada en 3 seg",
+          "daniel": "14–16 reps • Bajada controlada en 3 seg",
           "tips": [
             "Rodillas levemente flexionadas, lleva la cadera hacia atrás.",
             "Baja mancuernas pegadas a muslos con espalda recta y sube apretando glúteos."
@@ -377,10 +377,10 @@
           "ilustracion": "floor_press",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 45,
-          "lili": "12 reps",
-          "daniel": "12–15 reps",
+          "lili": "14–16 reps • Pausa 1 seg abajo sin descansar codos",
+          "daniel": "15–16 reps • Pausa 1 seg abajo sin descansar codos",
           "tips": [
             "Codos a 45° respecto al cuerpo (no totalmente abiertos en T).",
             "Baja hasta tocar suave el suelo con los codos y empuja arriba."
@@ -394,10 +394,10 @@
           "ilustracion": "lunge",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 45,
+          "tiempoSerieSeg": 50,
           "descansoSeg": 45,
-          "lili": "10 reps por pierna",
-          "daniel": "10–12 reps por pierna",
+          "lili": "12 reps por pierna • Con mancuernas a los lados",
+          "daniel": "12–14 reps por pierna • Con mancuernas y pausa abajo",
           "tips": [
             "Paso largo atrás bajando suave la rodilla trasera.",
             "Pueden apoyar una mano en la silla si buscan más estabilidad."
@@ -411,10 +411,10 @@
           "ilustracion": "biceps",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 40,
-          "lili": "12 reps por brazo",
-          "daniel": "12 reps por brazo",
+          "lili": "12–15 reps por brazo • Bajada lenta sin balanceo",
+          "daniel": "14–15 reps por brazo • Bajada lenta sin balanceo",
           "tips": [
             "Mantén codos pegados a los costados, sin balancear la espalda.",
             "Baja en 2 segundos controlando el peso."
@@ -620,10 +620,10 @@
           "ilustracion": "thruster",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 40,
+          "tiempoSerieSeg": 45,
           "descansoSeg": 50,
-          "lili": "10–12 reps",
-          "daniel": "12 reps",
+          "lili": "12–15 reps • Mancuernas siempre en hombros",
+          "daniel": "14–15 reps • Mancuernas siempre en hombros",
           "tips": [
             "Toca suave la silla en sentadilla y al subir empuja mancuernas arriba.",
             "Movimiento completo: tonifica piernas y hombros a la vez."
@@ -637,10 +637,10 @@
           "ilustracion": "chair_row",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 45,
+          "tiempoSerieSeg": 50,
           "descansoSeg": 40,
-          "lili": "12 reps por brazo",
-          "daniel": "12–15 reps por brazo",
+          "lili": "14–16 reps por brazo • Pausa 1 seg arriba",
+          "daniel": "15–16 reps por brazo • Pausa 1 seg arriba",
           "tips": [
             "Apoya una mano firme en el asiento de la silla, espalda plana.",
             "Lleva el codo hacia el techo pegado al cuerpo."
@@ -654,10 +654,10 @@
           "ilustracion": "lateral_raise",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 35,
+          "tiempoSerieSeg": 40,
           "descansoSeg": 40,
-          "lili": "10–12 reps",
-          "daniel": "12 reps",
+          "lili": "12–15 reps • Pausa 1 seg arriba y bajada lenta",
+          "daniel": "14–15 reps • Pausa 1 seg arriba y bajada lenta",
           "tips": [
             "Sube brazos hasta altura de hombros con codos levemente doblados.",
             "Baja lento sin dejar caer el peso."
@@ -671,10 +671,10 @@
           "ilustracion": "triceps_chair",
           "tipo": "reps",
           "series": 3,
-          "tiempoSerieSeg": 35,
+          "tiempoSerieSeg": 40,
           "descansoSeg": 45,
-          "lili": "10–12 reps (pies cerca = más fácil)",
-          "daniel": "12–15 reps (piernas extendidas)",
+          "lili": "12–15 reps • Bajada lenta en 3 seg",
+          "daniel": "15–18 reps • Piernas extendidas y bajada lenta",
           "tips": [
             "Silla firme. Baja rozando el borde con la espalda.",
             "Tonifica la parte posterior del brazo."

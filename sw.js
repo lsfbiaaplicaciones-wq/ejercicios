@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cuchufly-fit-v7';
+const CACHE_NAME = 'cuchufly-fit-v8';
 const ASSETS = [
   './',
   './index.html',
