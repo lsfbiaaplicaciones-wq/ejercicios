@@ -513,6 +513,44 @@
   }
 
   // --- MODO GUIADO EN VIVO (AUTOMÁTICO MANOS LIBRES) ---
+  let wakeLockSentinel = null;
+  let wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    wakeLockWanted = true;
+    if (!('wakeLock' in navigator) || !navigator.wakeLock || wakeLockSentinel) return;
+    try {
+      const sentinel = await navigator.wakeLock.request('screen');
+      if (!wakeLockWanted) {
+        sentinel.release().catch(() => {});
+        return;
+      }
+      wakeLockSentinel = sentinel;
+      sentinel.addEventListener('release', () => {
+        if (wakeLockSentinel === sentinel) {
+          wakeLockSentinel = null;
+        }
+      });
+    } catch {
+      // Silencioso si el dispositivo/navegador no permite Wake Lock
+    }
+  }
+
+  function releaseWakeLock() {
+    wakeLockWanted = false;
+    if (wakeLockSentinel) {
+      const sentinel = wakeLockSentinel;
+      wakeLockSentinel = null;
+      sentinel.release().catch(() => {});
+    }
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && wakeLockWanted) {
+      requestWakeLock();
+    }
+  });
+
   function stopTimer() {
     if (timerInterval) {
       clearInterval(timerInterval);
@@ -534,12 +572,14 @@
     phase = 'PREP';
     document.getElementById('guided-overlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    requestWakeLock();
     loadStepAndRun();
   }
 
   function closeGuidedWorkout() {
     stopTimer();
     stopVoice();
+    releaseWakeLock();
     document.getElementById('guided-overlay').classList.add('hidden');
     document.body.style.overflow = '';
   }
